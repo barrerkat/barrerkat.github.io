@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+
+
+body {
+  display: flex;
+  background-image: url('images/bg-intro-desktop.png');
+  background-color: rgb(250, 120, 122);
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+h1{
+  font-size: 30px;
+}
+
+.try {
+  background-color: transparent;
+  width: 490px;
+}
+.trial {
+  background-color: hsl(248, 32%, 49%);
+  color: white;
+  padding: 15px 25px;
+  box-shadow: 1px 4px 1px 2px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.container {
+  background-color: aliceblue;
+  border-radius: 6px;
+  box-shadow: 1px 4px 1px 2px rgba(0,0,0,0.3);
+}
+.btn {
+  background-color: hsl(154, 59%, 51%);
+  box-shadow: 1px 2px 3px 1px #006400;
+  padding: 14px 25px;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  border: 2px white;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color .5s ease-out;
+}
+
+.btn:hover{
+
+  background-color: rgba(56, 204, 140, 0.6);
+}
+
+form {
+  padding: 20px 30px;
+  padding-top: 25px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+p {
+  font-size: 14px;
+
+}
+input{
+  border: 1px solid #ddd;
+  outline: none;
+  margin-bottom: 16px;
+
+}
+
+input:focus{
+  border: 1px solid hsl(248, 32%, 49%);
+
+}
+
+ input.error{
+  border: 2px solid hsl(0, 100%, 74%);
+  outline: none;
+  background-image: url('images/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: 94% 10px;
+} 
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+h1{
+    font-size: 40px;
+    color: white;
+}
+p.see{
+    color: white;
+    font-size: 14px;
+    line-height: 1.7em;
+}
+.learn{
+    margin-right: 2.3rem;
+}
+
+.learn h1{
+  margin-bottom: 20px;
+}
+
+form p.error_msg{
+  text-align: right;
+  font-style: italic;
+  font-size: 10px;
+  font-weight: 500;
+  color: hsl(0, 100%, 74%);
+  margin-top: -10px;
+  margin-bottom: 14px;
+  display: none;
+}
+
+form p#terms{
+  color: hsl(246, 25%, 77%);
+  text-align: center;
+  font-style: normal;
+  font-size: 10px;
+  
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    display: block;
+    background-image: url('images/bg-intro-mobile.png');
+    background-color: rgb(250, 120, 122);
+    background-repeat: no-repeat;
+    height: fit-content;
+    padding: 39px 15px;
+    text-align: center;
+  }
+
+  .learn{
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+
+  .learn h1{
+    font-size: 25px;
+  }
+
+  .learn p{
+    font-size: 17px;
+    line-height: 1.3em;
+  }
+
+  .try{
+    width: 90%;
+    margin: auto;
+  }
+
+  .try .trial{
+    padding: 17px 40px;
+    font-size: 18px;
+  }
+
+  form p#terms{
+    margin-top: 14px;
+    font-size: 12px;
+    
+  }
+
+}

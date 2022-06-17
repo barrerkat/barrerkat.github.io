@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESPONSIVE WEB PAGE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon" />
+  </head>
+  <body>
+    <section class="learn">
+      <h1>
+        Learn to code by <br />
+        watching others
+      </h1>
+      <p class="see">
+        See how experienced developers solve problems in real-time. <br />
+        Watching scripted tutorials is great but understanding how <br />
+        developers think is invaluable.
+      </p>
+    </section>
+    <section class="try">
+      <div class="trial"><span style="font-weight:800;">Try it free 7 days</span> then $20/mo. thereafter</div>
+      <div class="container">
+        <form action="/action_page.php" novalidate>
+          <label for="fname"></label>
+          <input type="text" id="fname" name="fname" placeholder="First name"/>
+          <p class="error_msg" id="fname_error">First name cannot be empty</p>
+          <label for="lname"></label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Last name"
+          />
+          <p class="error_msg" id="lname_error">Last name cannot be empty</p>
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email "
+            name="email"
+            placeholder="Email Address"
+          />
+          <p class="error_msg" id="email_error1">Email cannot be empty</p>
+          <p class="error_msg" id="email_error2">Looks like this is not an email</p>
+          <label for="password"></label> 
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <p class="error_msg" id="password_error1">Password cannot be empty</p>
+          <p class="error_msg" id="password_error2">Password must be 8 to 15 characters long</p>
+          <button class="btn">CLAIM YOUR FREE TRIAL</button>
+          <p id="terms">
+            By clicking the button you are agreeing to our <span style="font-weight:800; color: hsl(0, 100%, 74%);">Terms and Services</span>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <script>
+
+      const form = document.querySelector('form');
+      function clearErrors(){
+
+        //Remove error styles for input
+        document.querySelector('[name=fname]').classList.remove('error');
+        document.querySelector('[name=lname]').classList.remove('error');
+        document.querySelector('[name=email]').classList.remove('error');
+        document.querySelector('[name=password]').classList.remove('error');
+
+        // Hide All Error messages
+        document.querySelector('[name=fname]').nextElementSibling.style.display = 'none';
+        document.querySelector('[name=lname]').nextElementSibling.style.display = 'none';
+        document.querySelector('[name=email]').nextElementSibling.style.display = 'none';
+        document.querySelector('#email_error2').style.display = 'none';
+        document.querySelector('[name=password]').nextElementSibling.style.display = 'none'
+        document.querySelector('#password_error2').style.display = 'none'
+
+      }
+      
+      form.addEventListener('submit', (e)=>{
+
+        e.preventDefault();
+
+        clearErrors();
+
+        let fname = form.fname.value;
+        let lname = form.lname.value;
+        let email = form.email.value;
+        let password = form.password.value;
+        console.log(password)
+        const re = /\S+@\S+\.\S+/
+        
+        console.log('Just submitted a form')
+        if(fname == ''){
+          document.querySelector('[name=fname]').classList.add('error');
+          document.querySelector('[name=fname]').nextElementSibling.style.display = 'block';
+        }
+        if (lname == ''){
+          document.querySelector('[name=lname]').classList.add('error');
+          document.querySelector('[name=lname]').nextElementSibling.style.display = 'block';
+        }
+
+        if(email == ''){
+          document.querySelector('[name=email]').classList.add('error');
+          document.querySelector('#email_error1').style.display = 'block';
+          
+        }else{
+          if (!re.test(email)){
+            document.querySelector('[name=email]').classList.add('error');
+            document.querySelector('#email_error2').style.display = 'block';
+            
+          }
+        }
+
+        if(password == ''){
+          document.querySelector('[name=password]').classList.add('error');
+          document.querySelector('#password_error1').style.display = 'block';
+        }else{
+          if(password.length < 8 || password.length > 15){
+            document.querySelector('[name=password]').classList.add('error');
+            document.querySelector('#password_error2').style.display = 'block';
+          }
+        }
+        
+
+      })
+
+    </script>
+  </body>
+</html>
